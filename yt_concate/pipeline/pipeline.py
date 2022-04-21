@@ -8,7 +8,7 @@ class Pipeline:
         self.steps = steps
 
     def run(self, inputs, utils):
-        data = None
+        data = None # 儲存要給下一個step的資料
         for step in self.steps:
             try:
                 data = step.process(data, inputs, utils)

@@ -1,5 +1,5 @@
 from abc import ABC
-from abc import abstractclassmethod
+from abc import abstractmethod
 
 
 class Step(ABC):
@@ -7,7 +7,7 @@ class Step(ABC):
     def __init__(self):
         pass
 
-    @abstractclassmethod
+    @abstractmethod
     def process(self, data, inputs, utils):
         pass
 
