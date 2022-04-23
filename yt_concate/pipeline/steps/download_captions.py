@@ -20,13 +20,13 @@ class DownloadCaptions(Step):
                     'a.en')  # 取得英文字幕
                 en_caption_convert_to_srt = (
                     en_caption.generate_srt_captions())
-                text_file = open(utils.get_caption_path(yt.url),
-                                 "w",
-                                 encoding='utf-8')
+                text_file = open(yt.caption_filepath,#utils.get_caption_path(yt.url),
+                                    "w",
+                                    encoding='utf-8')
                 text_file.write(en_caption_convert_to_srt)
                 text_file.close()
                 print(f'OK url:{yt.url}')
-            except (KeyError, AttributeError):
+            except (AttributeError):#KeyError,
                 print(f'ERROR URL:{yt.url}')
         end = time.time()
         print('took', end - start, 'seconds')
