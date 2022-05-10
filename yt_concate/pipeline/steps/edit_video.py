@@ -20,13 +20,6 @@ class EditVideo(Step):
                                                     inputs['search_word'])
         final_clip.write_videofile(output_filepath)
 
-        # # Make the text. Many more options are available.
-        # txt_clip = (TextClip("My Holidays 2013",fontsize=70,color='white')
-        #             .with_position('center')
-        #             .with_duration(10) )
-
-        # result = CompositeVideoClip([video, txt_clip]) # Overlay text on video
-        # result.write_videofile("myHolidays_edited.webm",fps=25) # Many options...
 
     def parse_caption_time(self, caption_time):
         start, end = caption_time.split(' --> ')
@@ -37,3 +30,6 @@ class EditVideo(Step):
         s, ms = s.split(',')
         return int(h), int(m), int(s) + int(ms) / 1000
         # return 多個用逗點分隔時會自動當成tuple
+
+
+
